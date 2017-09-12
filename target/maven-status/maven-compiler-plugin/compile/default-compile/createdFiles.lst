@@ -1,0 +1,4 @@
+au\com\riosoftware\firstapp\domain\PostRepository.class
+au\com\riosoftware\firstapp\controllers\PostController.class
+au\com\riosoftware\firstapp\domain\Post.class
+au\com\riosoftware\firstapp\Application.class
