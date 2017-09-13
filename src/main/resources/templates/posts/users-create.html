@@ -1,0 +1,26 @@
+<html layout:decorator="layoutDashboard">
+
+<div layout:fragment="content">
+	<h1>User Create</h1>
+	<form class="form" action="/create" method="post">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Full Name" id="ffullname" name="ffullname" aria-describedby="basic-addon2" />
+		</div>
+		<div class="input-group" style="margin-top:10px">
+  			<input type="text" class="form-control" placeholder="Email" id="fmail" name="fmail" aria-describedby="basic-addon2" />
+		</div>
+		<div class="input-group" style="margin-top:10px;width:197px">
+			<select class="selectpicker" id="fgrade" name="fgrade">
+				<option value=""></option>
+  				<option value="JP">JP</option>
+  				<option value="PG">PG</option>
+  				<option value="AP">AP</option>
+  				<option value="AN">AN</option>
+			</select>
+		</div>
+		<div class="input-group" style="margin-top:10px;">
+			<button type="submit" class="btn btn-success" href="/create" >Submit</button>
+		</div>
+	</form>
+</div>
+</html>

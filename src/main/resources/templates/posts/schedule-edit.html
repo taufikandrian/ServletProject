@@ -1,0 +1,18 @@
+<html layout:decorator="layoutDashboard">
+
+<div layout:fragment="content">
+	<h1>Schedule Edit</h1>
+	<form class="form" action="/updateSchedule" method="post">
+		<div>
+			<input type="text" class="form-control" th:value="${schedules.topic}" id="ftopic" name="ftopic" aria-describedby="basic-addon2" />
+		</div>
+		<div style="margin-top:10px">
+  			<input type="date" class="form-control" th:value="${schedules.date}" id="fdate" name="fdate" aria-describedby="basic-addon2" />
+		</div>
+		<div class="input-group" style="margin-top:10px;">
+			<input type="hidden" id="schedules_id" rows="5" class="form-control" name="schedules_id" th:value="${schedules.id}"/>
+			<button type="submit" class="btn btn-success" href="/updateSchedule" >Submit</button>
+		</div>
+	</form>
+</div>
+</html>

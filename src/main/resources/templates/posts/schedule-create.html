@@ -1,0 +1,17 @@
+<html layout:decorator="layoutDashboard">
+
+<div layout:fragment="content">
+	<h1>Schedule Create</h1>
+	<form class="form" action="/createSchedule" method="post">
+		<div>
+			<input type="text" class="form-control" placeholder="Topic" id="ftopic" name="ftopic" aria-describedby="basic-addon2" />
+		</div>
+		<div style="margin-top:10px">
+  			<input type="date" class="form-control" placeholder="Date" id="fdate" name="fdate" aria-describedby="basic-addon2" />
+		</div>
+		<div style="margin-top:10px;">
+			<button type="submit" class="btn btn-success" href="/createSchedule" >Submit</button>
+		</div>
+	</form>
+</div>
+</html>

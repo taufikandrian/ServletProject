@@ -1,0 +1,66 @@
+<html layout:decorator="layoutDashboard">
+<div layout:fragment="content">
+	<h1>Users</h1>
+	<a class="btn btn-primary" href="/users-create">Add User</a>
+    <table class="table table-striped" id="posts_list">
+        <thead>
+        <tr>
+        	<th>
+        		<form class="form" action="/searchname" method="post">
+    			<div class="input-group">
+     			 	<input type="text" class="form-control" id="ffullname" name="ffullname" placeholder="Search fullname..." />
+      				<span class="input-group-btn">
+        				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      				</span>
+    			</div>
+    			</form>
+  			</th>
+  			<th>
+  				<form class="form" action="/searchemail" method="post">
+    			<div class="input-group">
+     			 	<input type="text" class="form-control" id="fmail" name="fmail" placeholder="Search email..." />
+      				<span class="input-group-btn">
+        				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      				</span>
+    			</div>
+    			</form>
+  			</th>
+  			<th>
+  				&nbsp;
+  			</th>
+  			<th>
+  				&nbsp;
+  			</th>
+        </tr>
+        <tr>
+        	<th>Full Name</th>
+            <th>Email</th>
+            <th>Grade</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        	<tr data-th-each="user : ${users}">
+            	<td class="message" data-th-text="${user.fullname}">
+            	</td>
+            	<td class="message" data-th-text="${user.email}">
+            	</td>
+            	<td class="message" data-th-text="${user.grade}">
+            	</td>
+            	<td>
+                	<a th:href="@{'/{id}/delete'(id=${user.id})}" class="delete" th:attr="name=${user.fullname}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </span>
+                	</a>
+                	<a th:href="@{'/{id}/users-edit'(id=${user.id})}" class="edit" th:attr="name=${user.fullname}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </span>
+                    </a>
+               </td>
+        	</tr>
+        </tbody>
+    </table>
+</div>
+</html>

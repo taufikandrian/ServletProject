@@ -1,0 +1,26 @@
+<html layout:decorator="layoutDashboard">
+
+<div layout:fragment="content">
+	<h1>User Edit</h1>
+	<form class="form" action="/update" method="post">
+		<div class="input-group">
+			<input type="text" class="form-control" th:value="${user.fullname}" id="ffullname" name="ffullname" aria-describedby="basic-addon2" />
+		</div>
+		<div class="input-group" style="margin-top:10px">
+  			<input type="text" class="form-control" th:value="${user.email}" id="fmail" name="fmail" aria-describedby="basic-addon2" />
+		</div>
+		<div class="input-group" style="margin-top:10px;width:197px">
+			<select class="selectpicker" id="fgrade" name="fgrade">
+				<option th:selected="${user.grade == 'JP'}" value='JP'>JP</option>
+		 		<option th:selected="${user.grade == 'PG'}" value='PG'>PG</option>
+		 		<option th:selected="${user.grade == 'AP'}" value='AP'>AP</option>
+		 		<option th:selected="${user.grade == 'AN'}"  value='AN'>AN</option>
+			</select>
+		</div>
+		<div class="input-group" style="margin-top:10px;">
+			<input type="hidden" id="user_id" rows="5" class="form-control" name="user_id" th:value="${user.id}"/>
+			<button type="submit" class="btn btn-success" href="/users" >Submit</button>
+		</div>
+	</form>
+</div>
+</html>
